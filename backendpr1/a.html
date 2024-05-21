@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function h1(){
+           console.log("hello");
+           const a1=document.getElementById("a").value;
+           const b2=document.getElementById("b").value;
+           const d= await fetch("http://localhost:3000/?a="+a1+"&b="+b2);
+           const e= await d.text();
+          
+           document.getElementById("e").innerHTML=e;
+        }
+    </script>
+    <div>
+    <input id="a" placeholder="enter" >
+    <input id="b" placeholder="enter" >
+    <button onclick="h1()">submit</button>
+    <div id="e"></div>
+</div>
+</body>
+</html>
